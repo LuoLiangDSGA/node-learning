@@ -1,7 +1,7 @@
 ## Node.js之Sequelize起步
 
 ### 开始
-> 作为一门后端语言，`Node.js`也有访问数据库的需求，而在`node.js`中使用较多的是`Sequelize`，`Sequelize`是一个基于`promise`的`ORM`框架，支持多种数据库方言，并且提供事务支持，读取复制的功能。
+> 作为一门后端语言，`Node.js`也有访问数据库的需求，而在`node.js`中使用较多的是`Sequelize`，`Sequelize`是一个基于`promise`的`ORM`框架，支持多种数据库方言，并且提供事务支持，读取复制的功能。
 
 提前安装好Node，MySQL
 
