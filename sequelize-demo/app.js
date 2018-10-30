@@ -33,18 +33,18 @@ const User = sequelize.define('user', {
 
 // force: true will drop the table if it already exists
 // 创建表，使用promise方式
-User.sync({ force: true }).then(() => {
-    // Table created
-    return User.create({
-        id: 1,
-        username: 'steven rogers',
-        password: '123456'
-    }).then(p => {
-        console.log('created.' + JSON.stringify(p));
-    }).catch(function (err) {
-        console.log('failed: ' + err);
-    });
-});
+// User.sync({ force: true }).then(() => {
+//     // Table created
+//     return User.create({
+//         id: 1,
+//         username: 'steven rogers',
+//         password: '123456'
+//     }).then(p => {
+//         console.log('created.' + JSON.stringify(p));
+//     }).catch(function (err) {
+//         console.log('failed: ' + err);
+//     });
+// });
 
 // await方式
 // (async () => {
@@ -55,3 +55,21 @@ User.sync({ force: true }).then(() => {
 //     });
 //     console.log('created.' + JSON.stringify(user));
 // })();
+
+// 查询数据
+(async () => {
+    const users = await User.findAll({
+        // where: {
+        //     username: 'luo'
+        // }
+    });
+    console.log(`find ${users.length} users:`);
+    for (let u of users) {
+        console.log(JSON.stringify(u));
+    }
+})();
+
+// 更新数据
+(async () => {
+    
+})();
