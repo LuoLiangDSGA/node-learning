@@ -71,5 +71,24 @@ const User = sequelize.define('user', {
 
 // 更新数据
 (async () => {
-    
+    const user = await User.findById(1);
+    user.username = 'hulk';
+    await user.save();
+})();
+
+// 插入数据
+// (async () => {
+//     await User.create({
+//         id: 2,
+//         username: 'steven rogers',
+//         password: '123456'
+//     })
+// })();
+
+// 删除数据
+(async () => {
+    const user = await User.findById(2);
+    if (user !== null) {
+        await user.destroy();
+    }
 })();
